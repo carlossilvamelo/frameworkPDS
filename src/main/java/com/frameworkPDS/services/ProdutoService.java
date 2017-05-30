@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.frameworkPDS.models.Produto;
+import com.frameworkPDS.models.Servico;
 import com.frameworkPDS.repository.ProdutoRepository;
 
 
@@ -26,7 +27,14 @@ public class ProdutoService implements IProdutoService{
 	public Produto buscarPorId(String id) {
 		return produtoRepository.getOne(id);
 	}
-
+	@Override
+	public void deletarTodos(Produto produto) {
+		
+		/*for(Servico serv: produto.getServicos()){
+			servicoRepository.delete(serv);
+		}*/
+		
+	}
 	@Override
 	public List<Produto> buscarTodos() {
 		return produtoRepository.findAll();

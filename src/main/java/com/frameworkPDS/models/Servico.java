@@ -16,8 +16,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.frameworkPDS.models.status.StatusServico;
 
 
 @Entity
@@ -30,8 +33,9 @@ public class Servico implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_servico")
 	private Integer id;
-	//private EnumStatus status;
-	
+	@OneToOne
+	private Acompanhamento acompanhamento;
+
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Date dataRequerimento;
 	
@@ -55,8 +59,7 @@ public class Servico implements Serializable{
 	@OneToMany(mappedBy="servico", fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
 	private List<Orcamento> orcamentos;
 	
-	@OneToMany(mappedBy="servico", fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
-	private List<CheckIn> checkIns;
+	
 	
 	private String descricao;
 	private String obs;
@@ -155,18 +158,6 @@ public class Servico implements Serializable{
 		this.obs = obs;
 	}
 
-	public List<CheckIn> getCheckIns() {
-		return checkIns;
-	}
-
-	public void setCheckIns(List<CheckIn> checkin) {
-		this.checkIns = checkin;
-	}
 	
-	public void addCheckIn(CheckIn checkin){
-		
-		setCheckIns(new ArrayList<CheckIn>());
-		this.checkIns.add(checkin);
-	}
 	
 }

@@ -26,9 +26,7 @@ public class Orcamento {
 	@OneToMany(mappedBy="orcamento", fetch=FetchType.LAZY, cascade= CascadeType.ALL)
 	private List<Peca> pecasTroca;// nome da peça valor
 	private String obs;
-	@ManyToOne
-	@JoinColumn(name="id_servico")
-	private Servico servico;
+	
 	
 	public Orcamento() {
 		// TODO Auto-generated constructor stub

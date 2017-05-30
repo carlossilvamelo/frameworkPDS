@@ -16,9 +16,7 @@ public class Peca {
 	private String nome;
 	private Float preco;
 	private String descricao;
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="id_orcamento")
-	private Orcamento orcamento;
+	
 	public String getNome() {
 		return nome;
 	}

@@ -16,6 +16,8 @@ public interface IProdutoService {
 	public List<Produto> buscarTodos();
 
 	public void deleteAlertasProduto(Produto produto);
+
+	void deletarTodos(Produto produto);
 	
 	
 
