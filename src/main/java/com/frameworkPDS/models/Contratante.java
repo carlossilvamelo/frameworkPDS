@@ -34,12 +34,10 @@ public class Contratante implements Serializable{
 	private String email;
 	private String sexo;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_prestadora")
-	private Prestadora prestadora;
 	
 	@OneToOne
 	private Endereco endereco;
+	
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Calendar dataNascimento;
 
@@ -47,8 +45,6 @@ public class Contratante implements Serializable{
 	private List<Servico> servicos;
 	
 	
-	@OneToMany(mappedBy="contratante", fetch=FetchType.LAZY, cascade={CascadeType.MERGE, CascadeType.REMOVE})
-	private List<Produto> produtos;
 	
 
 	public Contratante(){};
@@ -78,6 +74,19 @@ public class Contratante implements Serializable{
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+	
+
+	public List<Servico> getServicos() {
+		return servicos;
+	}
+
+
+	public void setServicos(List<Servico> servicos) {
+		this.servicos = servicos;
+	}
+
+
+
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -90,9 +99,7 @@ public class Contratante implements Serializable{
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -109,18 +116,7 @@ public class Contratante implements Serializable{
 		setServico();
 		this.servicos.add(servico);
 	}
-	public List<Produto> getVeiculo() {
-		return produtos;
-	}
-	public void setVeiculo() {
-		
-		this.produtos = new ArrayList<Produto>();
-	}
-	public void addVeiculo(Produto veiculo){
-		
-		setVeiculo();
-		this.produtos.add(veiculo);
-	}
+
 	public String getId() {
 		return id;
 	}

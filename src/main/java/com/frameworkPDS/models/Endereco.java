@@ -21,8 +21,7 @@ public class Endereco implements Serializable{
 	private String cidade;
 	private String bairro;
 	private int numero;
-	@OneToOne(cascade= CascadeType.PERSIST)
-	private Contratante contratante;
+	
 	
 	public Endereco() {
 		// TODO Auto-generated constructor stub

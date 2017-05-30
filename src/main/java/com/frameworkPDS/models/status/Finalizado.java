@@ -1,37 +1,33 @@
 package com.frameworkPDS.models.status;
 
-public class StatusFinalizado extends Status{
+public class Finalizado extends StatusServico{
 
-	public StatusFinalizado() {
+	public Finalizado() {
 		super("Finalizado");
 	}
 	
 	@Override
-	public Status iniciar() {
+	public StatusServico iniciar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	@Override
+	public StatusServico proximo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Status parar() {
+	public StatusServico reiniciar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Status proximo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Status reiniciar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Status finalizar() {
+	public StatusServico finalizar() {
 		// TODO Auto-generated method stub
 		return null;
 	}

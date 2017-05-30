@@ -1,39 +1,36 @@
 package com.frameworkPDS.models.status;
+import javax.persistence.Entity;
 
-public class StatusIniciado extends Status{
+@Entity
+public class EmAndamento extends StatusServico{
 
-	public StatusIniciado() {
+	
+	public EmAndamento() {
 		super("Em andamento");
 	}
 	
 	@Override
-	public Status iniciar() {
+	public StatusServico iniciar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Status parar() {
+	public StatusServico proximo() {
+		// TODO Auto-generated method stub
+		return new Finalizado();
+	}
+
+	@Override
+	public StatusServico reiniciar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Status reiniciar() {
+	public StatusServico finalizar() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public Status finalizar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Status proximo() {
-		// TODO Auto-generated method stub
-		return new StatusFinalizado();
 	}
 
 }
