@@ -20,7 +20,7 @@ import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.frameworkPDS.models.status.StatusServico;
+import com.frameworkPDS.models.status.State;
 
 
 @Entity
@@ -33,12 +33,14 @@ public class Servico implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_servico")
 	private Integer id;
-	@OneToOne
+	
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name="id_acompanhamento")
 	private Acompanhamento acompanhamento;
 
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Date dataRequerimento;
-	
+	private Orcamento o;
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Calendar prazoFinal;
 
@@ -46,7 +48,7 @@ public class Servico implements Serializable{
 	@JoinColumn(name="id_prestadora")
 	private Prestadora prestadora;
 	
-	@ManyToOne(fetch=FetchType.EAGER, cascade= CascadeType.MERGE)
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	@JoinColumn(name="id_contratante")
 	private Contratante contratante;
 	
@@ -55,23 +57,37 @@ public class Servico implements Serializable{
 	private Produto produto;
 	
 	private String notaFiscal;
+	
+	//@OneToMany(mappedBy="servico",fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
+	//private List<Orcamento> orcamentos;
 
-	@OneToMany(mappedBy="servico", fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
-	private List<Orcamento> orcamentos;
-	
-	
-	
 	private String descricao;
 	private String obs;
 	
 	public Servico() {	}
-	
+
 	public Integer getId() {
 		return id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Acompanhamento getAcompanhamento() {
+		return acompanhamento;
+	}
+
+	public void setAcompanhamento(Acompanhamento acompanhamento) {
+		this.acompanhamento = acompanhamento;
+	}
+
+	public Date getDataRequerimento() {
+		return dataRequerimento;
+	}
+
+	public void setDataRequerimento(Date dataRequerimento) {
+		this.dataRequerimento = dataRequerimento;
 	}
 
 	public Calendar getPrazoFinal() {
@@ -81,83 +97,63 @@ public class Servico implements Serializable{
 	public void setPrazoFinal(Calendar prazoFinal) {
 		this.prazoFinal = prazoFinal;
 	}
-	
-	public Prestadora getOficina(){
+
+	public Prestadora getPrestadora() {
 		return prestadora;
 	}
 
-	public void setOficina(Prestadora oficina){
-		this.prestadora = oficina;
+	public void setPrestadora(Prestadora prestadora) {
+		this.prestadora = prestadora;
 	}
 
-	public Contratante getCliente() {
+	public Contratante getContratante() {
 		return contratante;
 	}
 
-	public void setCliente(Contratante cliente) {
-		this.contratante = cliente;
+	public void setContratante(Contratante contratante) {
+		this.contratante = contratante;
 	}
-	
-	public Integer getIdServico() {
-		return id;
-	}
-	public void setIdServico(Integer idServico) {
-		this.id = idServico;
-	}
-	/*public EnumStatus getStatus() {
-		return status;
-	}
-	public void setStatus(EnumStatus status) {
-		this.status = status;
-	}*/
-	public Date getDataRequerimento() {
-		return dataRequerimento;
-	}
-	public void setDataRequerimento(Date dataRequerimento) {
-		this.dataRequerimento = dataRequerimento;
-	}
-	public Contratante getResponsavel() {
-		return contratante;
-	}
-	public void setResponsavel(Contratante cliente) {
-		this.contratante = cliente;
-	}
-	public Produto getVeiculo() {
+
+	public Produto getProduto() {
 		return produto;
 	}
-	public void setVeiculo(Produto veiculo) {
-		this.produto = veiculo;
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
+
 	public String getNotaFiscal() {
 		return notaFiscal;
 	}
+
 	public void setNotaFiscal(String notaFiscal) {
 		this.notaFiscal = notaFiscal;
 	}
-	public List<Orcamento> getOrcamento() {
+
+	/*public List<Orcamento> getOrcamentos() {
 		return orcamentos;
 	}
-	public void setOrcamento(List<Orcamento> orcamento) {
-		this.orcamentos = orcamento;
-	}
-	public void addOrcamento(Orcamento orcamento){
-		
-		setOrcamento(new ArrayList<Orcamento>());
-		this.orcamentos.add(orcamento);
-	}
+
+	public void setOrcamentos(List<Orcamento> orcamentos) {
+		this.orcamentos = orcamentos;
+	}*/
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	public String getObs() {
 		return obs;
 	}
+
 	public void setObs(String obs) {
 		this.obs = obs;
 	}
-
+	
 	
 	
 }

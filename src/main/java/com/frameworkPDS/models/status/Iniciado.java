@@ -1,37 +1,25 @@
 package com.frameworkPDS.models.status;
 
-import javax.persistence.Entity;
 
-@Entity
-public class Iniciado extends StatusServico{
+public class  Iniciado extends State{
 
-	public Iniciado() {
-		super("Iniciado");
+	//private static StatusServico instance = new Iniciado();
+	
+	 public Iniciado() {
+		 super("Iniciado");
 	}
 	
-	@Override
-	public StatusServico iniciar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	/* public static StatusServico getInstance(){
+				return instance;
+	 }*/
+	 
 
 
 	@Override
-	public StatusServico reiniciar() {
-		// TODO Auto-generated method stub
-		return null;
+	public State proximo() {
+		
+		return new EmAndamento();
 	}
-
-	@Override
-	public StatusServico finalizar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public StatusServico proximo() {
-		// TODO Auto-generated method stub
-		return new Finalizado();
-	}
+	
 
 }

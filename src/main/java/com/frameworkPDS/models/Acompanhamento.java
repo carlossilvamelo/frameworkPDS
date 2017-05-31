@@ -8,10 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.frameworkPDS.models.status.StatusServico;
+import com.frameworkPDS.models.status.State;
 
 @Entity
 public class Acompanhamento {
@@ -20,11 +22,24 @@ public class Acompanhamento {
 	@GeneratedValue
 	@Column(name="id_acompanhamento")
 	private Integer id;
-	@OneToOne
-	private StatusServico status;
+	private String statusServico;
 	
-	@OneToMany(mappedBy="acompanhamento", fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
+	@OneToMany(mappedBy="servico",fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
 	private List<CheckIn> checkIns;
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
+	@JoinColumn(name="id_servico")
+	private Servico servico;
+	private String observações;
+	
+	
+	
+	public Servico getServico() {
+		return servico;
+	}
+
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
 	
 	public List<CheckIn> getCheckIns() {
 		return checkIns;
@@ -34,7 +49,7 @@ public class Acompanhamento {
 		this.checkIns = checkIns;
 	}
 
-	private String observações;
+	
 
 	public Integer getId() {
 		return id;
@@ -44,12 +59,14 @@ public class Acompanhamento {
 		this.id = id;
 	}
 
-	public StatusServico getStatus() {
-		return status;
+	
+
+	public String getStatusServico() {
+		return statusServico;
 	}
 
-	public void setStatus(StatusServico status) {
-		this.status = status;
+	public void setStatusServico(String statusServico) {
+		this.statusServico = statusServico;
 	}
 
 	public String getObservações() {
