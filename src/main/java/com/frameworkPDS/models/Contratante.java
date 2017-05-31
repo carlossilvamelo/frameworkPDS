@@ -22,7 +22,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 public class Contratante implements Serializable{
 
-	private static final long serialVersionUID = 1L;
 
 
 	@Id
@@ -35,14 +34,14 @@ public class Contratante implements Serializable{
 	private String sexo;
 
 	
-	@OneToOne
+	@OneToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	private Endereco endereco;
 	
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Calendar dataNascimento;
 
-	@OneToMany(mappedBy="contratante", fetch=FetchType.LAZY, cascade={CascadeType.MERGE, CascadeType.REMOVE})
-	private List<Servico> servicos;
+	@OneToMany(mappedBy="contratante", fetch=FetchType.LAZY, cascade={CascadeType.ALL})
+	private List<Servico> servicos = new ArrayList<Servico>();
 	
 	
 	
@@ -84,6 +83,10 @@ public class Contratante implements Serializable{
 	public void setServicos(List<Servico> servicos) {
 		this.servicos = servicos;
 	}
+	
+	public void adicionarServico(Servico servico) {
+		this.servicos.add(servico);
+	}
 
 
 
@@ -113,16 +116,20 @@ public class Contratante implements Serializable{
 		this.servicos = new ArrayList<Servico>();
 	}
 	public void addServico(Servico servico){
-		setServico();
 		this.servicos.add(servico);
 	}
+
 
 	public String getId() {
 		return id;
 	}
+
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	
 
 
 }

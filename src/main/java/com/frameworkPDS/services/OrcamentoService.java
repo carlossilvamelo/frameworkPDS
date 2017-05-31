@@ -16,6 +16,7 @@ public class OrcamentoService implements IOrcamentoService{
 	@Autowired
 	private OrcamentoRepository orcamentoRepository;
 	
+	private ContadorServico cs;
 	
 	
 	// acesso banco de dados
