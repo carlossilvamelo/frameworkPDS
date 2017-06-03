@@ -37,6 +37,10 @@ public class Servico implements Serializable{
 	@JoinColumn(name="id_acompanhamento")
 	private Acompanhamento acompanhamento;
 
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name="id_MarcaModelo")
+	private MarcaModelo marcaModelo;
+	
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Date dataRequerimento;
 	
