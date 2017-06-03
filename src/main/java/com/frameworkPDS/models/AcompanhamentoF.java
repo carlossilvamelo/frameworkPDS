@@ -1,5 +1,6 @@
 package com.frameworkPDS.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,8 +15,12 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Acompanhamento {
+public class AcompanhamentoF implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	@Column(name="id_acompanhamento")
@@ -23,28 +28,28 @@ public class Acompanhamento {
 	private String statusServico;
 	
 	@OneToMany(mappedBy="acompanhamento",fetch=FetchType.LAZY, cascade={CascadeType.ALL})
-	private List<CheckIn> checkIns;
+	private List<CheckInF> checkIns;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
 	@JoinColumn(name="id_servico")
-	private Servico servico;
+	private ServicoF servico;
 	private String observações;
 	
 	
 	
-	public Servico getServico() {
+	public ServicoF getServico() {
 		return servico;
 	}
 
-	public void setServico(Servico servico) {
+	public void setServico(ServicoF servico) {
 		this.servico = servico;
 	}
 	
-	public List<CheckIn> getCheckIns() {
+	public List<CheckInF> getCheckIns() {
 		return checkIns;
 	}
 
-	public void setCheckIns(List<CheckIn> checkIns) {
+	public void setCheckIns(List<CheckInF> checkIns) {
 		this.checkIns = checkIns;
 	}
 

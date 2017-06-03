@@ -1,8 +1,6 @@
 package com.frameworkPDS.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,15 +8,11 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import javassist.CtPrimitiveType;
-
 
 
 @Entity
-public class Produto implements Serializable{
+public class ProdutoF implements Serializable{
 
 	
 
@@ -30,10 +24,10 @@ public class Produto implements Serializable{
 	private String nome;
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_marcaModelo")
-	private MarcaModelo marcaModelo;
+	private MarcaModeloF marcaModelo;
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.MERGE)
 	@JoinColumn(name="id_contratante")
-	private Contratante contratante;
+	private ContratanteF contratante;
 	
 	public String getId() {
 		return id;
@@ -47,16 +41,16 @@ public class Produto implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public MarcaModelo getMarcaModelo() {
+	public MarcaModeloF getMarcaModelo() {
 		return marcaModelo;
 	}
-	public void setMarcaModelo(MarcaModelo marcaModelo) {
+	public void setMarcaModelo(MarcaModeloF marcaModelo) {
 		this.marcaModelo = marcaModelo;
 	}
-	public Contratante getContratante() {
+	public ContratanteF getContratante() {
 		return contratante;
 	}
-	public void setContratante(Contratante contratante) {
+	public void setContratante(ContratanteF contratante) {
 		this.contratante = contratante;
 	}
 

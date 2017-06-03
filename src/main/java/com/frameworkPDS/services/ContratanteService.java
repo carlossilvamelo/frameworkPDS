@@ -7,15 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
-
-import com.frameworkPDS.models.Contratante;
+import com.frameworkPDS.models.ContratanteF;
 import com.frameworkPDS.repository.ContratanteRepository;
 
 @Service
 public class ContratanteService implements IContratanteService{
 
-
-	
 	@Autowired
 	private ContratanteRepository contratanteRepository;
 	
@@ -27,8 +24,8 @@ public class ContratanteService implements IContratanteService{
 	}
 	
 	@Override
-	public Contratante buscarPorId(String id) {
-		Contratante contratante = null;
+	public ContratanteF buscarPorId(String id) {
+		ContratanteF contratante = null;
 		try {
 			contratante = contratanteRepository.findOne(id);
 		} catch (DataAccessException e) {
@@ -39,7 +36,7 @@ public class ContratanteService implements IContratanteService{
 	}
 	
 	@Override
-	public void inserir(Contratante contratante) {
+	public void inserir(ContratanteF contratante) {
 		try {
 			contratanteRepository.save(contratante);
 		} catch (DataAccessException e) {
@@ -48,7 +45,7 @@ public class ContratanteService implements IContratanteService{
 		}
 	}
 	@Override
-	public void deletar(Contratante contratante) {
+	public void deletar(ContratanteF contratante) {
 		try {
 			contratanteRepository.delete(contratante);
 		} catch (DataAccessException e) {
@@ -59,8 +56,8 @@ public class ContratanteService implements IContratanteService{
 
 
 	@Override
-	public List<Contratante> buscarTodos() {
-		List<Contratante> contratantes = null;
+	public List<ContratanteF> buscarTodos() {
+		List<ContratanteF> contratantes = null;
 		try {
 			contratantes = contratanteRepository.findAll();
 		} catch (DataAccessException e) {
@@ -71,7 +68,7 @@ public class ContratanteService implements IContratanteService{
 	}
 
 	@Override
-	public Contratante buscarID(String id) {
+	public ContratanteF buscarID(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

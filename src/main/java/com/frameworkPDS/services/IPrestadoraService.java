@@ -2,12 +2,12 @@ package com.frameworkPDS.services;
 
 import java.util.List;
 
-import com.frameworkPDS.models.Prestadora;
+import com.frameworkPDS.models.PrestadoraF;
 
 
 public interface IPrestadoraService {
-	public Prestadora buscarPorId(String id);
-	public void inserir(Prestadora prestadora);
-	public void deletar(Prestadora prestadora);
-	public List<Prestadora> buscarTodos();
+	public PrestadoraF buscarPorId(String id);
+	public void inserir(PrestadoraF prestadora);
+	public void deletar(PrestadoraF prestadora);
+	public List<PrestadoraF> buscarTodos();
 }

@@ -1,15 +1,14 @@
 package com.frameworkPDS.services;
 
 import java.util.List;
-
-import com.frameworkPDS.models.Orcamento;
+import com.frameworkPDS.models.OrcamentoF;
 
 
 public interface IOrcamentoService {
 
 	//acesso ao banco
-	public void inserir(Orcamento orcamento);
-	public void deletar(Orcamento orcamento);
-	public List<Orcamento> buscarTodos();
-	public Orcamento buscarPorId(Long id);
+	public void inserir(OrcamentoF orcamento);
+	public void deletar(OrcamentoF orcamento);
+	public List<OrcamentoF> buscarTodos();
+	public OrcamentoF buscarPorId(Long id);
 }

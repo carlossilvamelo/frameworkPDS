@@ -1,5 +1,7 @@
 package com.frameworkPDS.models;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,9 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class MarcaModelo {
+public class MarcaModeloF implements Serializable {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_marcaModelo")
@@ -19,9 +25,9 @@ public class MarcaModelo {
 	private String marca;
 	private String modelo;
 	@OneToOne(mappedBy="marcaModelo", cascade=CascadeType.ALL)
-	private Produto produto;
+	private ProdutoF produto;
 
-	public MarcaModelo(){
+	public MarcaModeloF(){
 	}
 
 	public Long getId() {
@@ -48,11 +54,11 @@ public class MarcaModelo {
 		this.modelo = modelo;
 	}
 	
-	public Produto getProduto() {
+	public ProdutoF getProduto() {
 		return produto;
 	}
 
-	public void setProduto(Produto produto) {
+	public void setProduto(ProdutoF produto) {
 		this.produto = produto;
 	}
 	

@@ -6,20 +6,20 @@ import java.util.List;
 import org.jsoup.HttpStatusException;
 import org.springframework.stereotype.Component;
 
-import com.frameworkPDS.models.Peca;
+import com.frameworkPDS.models.PecaF;
 
 @Component
 public abstract class Busca {
 
-	private List<Peca> pecas;
+	private List<PecaF> pecas;
 
 	public Busca(){
 		
-		pecas = new ArrayList<Peca>();
+		pecas = new ArrayList<PecaF>();
 	}
 	
 	
-	private final List<Peca> menorPreco(List<Peca> listaPecas) throws HttpStatusException{
+	private final List<PecaF> menorPreco(List<PecaF> listaPecas) throws HttpStatusException{
 		
 		listaPecas.stream()
 		.filter((p)-> p.getPreco() != null)
@@ -31,19 +31,19 @@ public abstract class Busca {
 	
 
 	
-	public final List<Peca> buscarPecaMaisAvaliado(String idValor, String idProduto) throws HttpStatusException {
+	public final List<PecaF> buscarPecaMaisAvaliado(String idValor, String idProduto) throws HttpStatusException {
 
 		return maisAvaliado(buscaPeca());
 	}
 	
 	
-	public final List<Peca> buscarPecaMenorPreco(String idValor, String idProduto) throws HttpStatusException {
+	public final List<PecaF> buscarPecaMenorPreco(String idValor, String idProduto) throws HttpStatusException {
 
 		return menorPreco(buscaPeca());
 	}
 
 
-	private final List<Peca> maisAvaliado(List<Peca> listaPecas) {
+	private final List<PecaF> maisAvaliado(List<PecaF> listaPecas) {
 		
 		listaPecas.stream()
 		.filter((p)-> p.getAvaliacao() != null)
@@ -53,7 +53,7 @@ public abstract class Busca {
 	}
 
 	
-	public List<Peca> buscaPeca(){
+	public List<PecaF> buscaPeca(){
 		
 		return pecas;	
 	}

@@ -23,7 +23,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
-public class Servico implements Serializable{
+public class ServicoF implements Serializable{
 
 
 	private static final long serialVersionUID = 1L;
@@ -35,11 +35,11 @@ public class Servico implements Serializable{
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_acompanhamento")
-	private Acompanhamento acompanhamento;
+	private AcompanhamentoF acompanhamento;
 
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_MarcaModelo")
-	private MarcaModelo marcaModelo;
+	private MarcaModeloF marcaModelo;
 	
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Date dataRequerimento;
@@ -49,26 +49,26 @@ public class Servico implements Serializable{
 
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	@JoinColumn(name="id_prestadora")
-	private Prestadora prestadora;
+	private PrestadoraF prestadora;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	@JoinColumn(name="id_contratante")
-	private Contratante contratante;
+	private ContratanteF contratante;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
 	@JoinColumn(name="id_produto")
-	private Produto produto;
+	private ProdutoF produto;
 	
 	private String notaFiscal;
 	
 	@OneToMany(mappedBy="servico",fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
-	private List<Orcamento> orcamentos;
+	private List<OrcamentoF> orcamentos;
 
 	private String descricao;
 	private String obs;
 	
-	public Servico() {	}
-
+	public ServicoF() {	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -77,11 +77,11 @@ public class Servico implements Serializable{
 		this.id = id;
 	}
 
-	public Acompanhamento getAcompanhamento() {
+	public AcompanhamentoF getAcompanhamento() {
 		return acompanhamento;
 	}
 
-	public void setAcompanhamento(Acompanhamento acompanhamento) {
+	public void setAcompanhamento(AcompanhamentoF acompanhamento) {
 		this.acompanhamento = acompanhamento;
 	}
 
@@ -101,27 +101,27 @@ public class Servico implements Serializable{
 		this.prazoFinal = prazoFinal;
 	}
 
-	public Prestadora getPrestadora() {
+	public PrestadoraF getPrestadora() {
 		return prestadora;
 	}
 
-	public void setPrestadora(Prestadora prestadora) {
+	public void setPrestadora(PrestadoraF prestadora) {
 		this.prestadora = prestadora;
 	}
 
-	public Contratante getContratante() {
+	public ContratanteF getContratante() {
 		return contratante;
 	}
 
-	public void setContratante(Contratante contratante) {
+	public void setContratante(ContratanteF contratante) {
 		this.contratante = contratante;
 	}
 
-	public Produto getProduto() {
+	public ProdutoF getProduto() {
 		return produto;
 	}
 
-	public void setProduto(Produto produto) {
+	public void setProduto(ProdutoF produto) {
 		this.produto = produto;
 	}
 

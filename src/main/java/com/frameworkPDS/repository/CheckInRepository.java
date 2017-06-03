@@ -6,16 +6,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import com.frameworkPDS.models.CheckIn;
+import com.frameworkPDS.models.CheckInF;
 
 
 
 @Repository
-public interface CheckInRepository extends JpaRepository<CheckIn, Integer>{
+public interface CheckInRepository extends JpaRepository<CheckInF, Integer>{
 
 	
-	@Query("SELECT c FROM CheckIn c WHERE c.id =:id ")
-	public List<CheckIn> listarCheckInPorServico(@Param("id")Integer id);
+	@Query("SELECT c FROM CheckInF c WHERE c.id =:id ")
+	public List<CheckInF> listarCheckInPorServico(@Param("id")Integer id);
 
 }

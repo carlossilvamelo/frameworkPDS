@@ -4,13 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.frameworkPDS.models.MarcaModelo;
-import com.frameworkPDS.models.Produto;
-import com.frameworkPDS.models.Servico;
+import com.frameworkPDS.models.MarcaModeloF;
+import com.frameworkPDS.models.ProdutoF;
 import com.frameworkPDS.repository.MarcaModeloRepository;
 import com.frameworkPDS.repository.ProdutoRepository;
-
 
 
 @Service
@@ -24,16 +21,16 @@ public class ProdutoService implements IProdutoService{
 	
 
 	@Override
-	public void inserir(Produto produto) {
+	public void inserir(ProdutoF produto) {
 		produtoRepository.save(produto);
 	}
 
 	@Override
-	public Produto buscarPorId(String id) {
+	public ProdutoF buscarPorId(String id) {
 		return produtoRepository.getOne(id);
 	}
 	@Override
-	public void deletarTodos(Produto produto) {
+	public void deletarTodos(ProdutoF produto) {
 		
 		/*for(Servico serv: produto.getServicos()){
 			servicoRepository.delete(serv);
@@ -41,12 +38,12 @@ public class ProdutoService implements IProdutoService{
 		
 	}
 	@Override
-	public List<Produto> buscarTodos() {
+	public List<ProdutoF> buscarTodos() {
 		return produtoRepository.findAll();
 	}
 	
 	@Override
-	public void deletar(Produto produto) {
+	public void deletar(ProdutoF produto) {
 		produtoRepository.delete(produto);
 	}
 	
@@ -57,7 +54,7 @@ public class ProdutoService implements IProdutoService{
 	}
 	
 	@Override
-	public void deleteAlertasProduto(Produto produto) {
+	public void deleteAlertasProduto(ProdutoF produto) {
 		//TODO criar esse método
 		
 		//dataFacade.getAlertaRepository().deleteByTipoAlerta(veiculo);
@@ -70,7 +67,7 @@ public class ProdutoService implements IProdutoService{
 	}
 
 	@Override
-	public MarcaModelo buscarPorMarcaModelo(String marca, String modelo) {
+	public MarcaModeloF buscarPorMarcaModelo(String marca, String modelo) {
 		// TODO Auto-generated method stub
 		return modeloRepository.buscarPorMarcaModelo(marca, modelo);
 	}

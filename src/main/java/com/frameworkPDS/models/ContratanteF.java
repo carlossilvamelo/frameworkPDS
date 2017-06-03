@@ -9,21 +9,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-
-
+import org.springframework.format.annotation.DateTimeFormat; 
 
 @Entity
-public class Contratante implements Serializable{
+public class ContratanteF implements Serializable{
 
 
-
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="id_contratante")
 	private String id;
@@ -34,21 +29,21 @@ public class Contratante implements Serializable{
 	private String sexo;
 
 	@OneToMany(mappedBy="contratante", fetch=FetchType.LAZY, cascade={CascadeType.ALL})
-	private List<Produto> produto;
+	private List<ProdutoF> produto;
 	
 	@OneToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
-	private Endereco endereco;
+	private EnderecoF endereco;
 	
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Calendar dataNascimento;
 
 	@OneToMany(mappedBy="contratante", fetch=FetchType.LAZY, cascade={CascadeType.ALL})
-	private List<Servico> servicos = new ArrayList<Servico>();
+	private List<ServicoF> servicos = new ArrayList<ServicoF>();
 	
 	
 	
 
-	public Contratante(){};
+	public ContratanteF(){};
 	
 	
 	public String getTelefone() {
@@ -77,25 +72,23 @@ public class Contratante implements Serializable{
 	}
 	
 
-	public List<Servico> getServicos() {
+	public List<ServicoF> getServicos() {
 		return servicos;
 	}
 
 
-	public void setServicos(List<Servico> servicos) {
+	public void setServicos(List<ServicoF> servicos) {
 		this.servicos = servicos;
 	}
 	
-	public void adicionarServico(Servico servico) {
+	public void adicionarServico(ServicoF servico) {
 		this.servicos.add(servico);
 	}
 
-
-
-	public Endereco getEndereco() {
+	public EnderecoF getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(EnderecoF endereco) {
 		this.endereco = endereco;
 	}
 	public String getSexo() {
@@ -111,13 +104,13 @@ public class Contratante implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public List<Servico> getServico() {
+	public List<ServicoF> getServico() {
 		return servicos;
 	}
 	public void setServico() {
-		this.servicos = new ArrayList<Servico>();
+		this.servicos = new ArrayList<ServicoF>();
 	}
-	public void addServico(Servico servico){
+	public void addServico(ServicoF servico){
 		this.servicos.add(servico);
 	}
 
@@ -132,13 +125,13 @@ public class Contratante implements Serializable{
 	}
 
 
-	public List<Produto> getProduto() {
+	public List<ProdutoF> getProduto() {
 		return produto;
 	}
 	public void setProduto() {
-		this.produto = new ArrayList<Produto>();
+		this.produto = new ArrayList<ProdutoF>();
 	}
-	public void addProduto(Produto produto){
+	public void addProduto(ProdutoF produto){
 		this.produto.add(produto);
 	}
 	

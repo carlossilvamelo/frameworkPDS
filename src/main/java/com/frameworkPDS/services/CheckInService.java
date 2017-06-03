@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
-
-import com.frameworkPDS.models.CheckIn;
+import com.frameworkPDS.models.CheckInF;
 import com.frameworkPDS.repository.CheckInRepository;
 
 
@@ -18,7 +17,7 @@ public class CheckInService implements ICheckInService{
 	private CheckInRepository checkInRepository;
 
 	@Override
-	public void inserir(CheckIn checkIn) {
+	public void inserir(CheckInF checkIn) {
 		try {
 			checkInRepository.save(checkIn);
 		} catch (DataAccessException e) {
@@ -29,7 +28,7 @@ public class CheckInService implements ICheckInService{
 	}
 
 	@Override
-	public List<CheckIn> buscarCheckInPorId(Integer idServico) {
+	public List<CheckInF> buscarCheckInPorId(Integer idServico) {
 		
 		return checkInRepository.listarCheckInPorServico(idServico);
 	}

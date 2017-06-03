@@ -2,27 +2,28 @@ package com.frameworkPDS.services;
 
 import java.util.List;
 
-import com.frameworkPDS.models.MarcaModelo;
-import com.frameworkPDS.models.Produto;
+import com.frameworkPDS.models.MarcaModeloF;
+import com.frameworkPDS.models.ProdutoF;
+
 
 public interface IProdutoService {
 	
 	//acesso ao banco
-	public void inserir(Produto produto);
+	public void inserir(ProdutoF produto);
 	
-	public void deletar(Produto produto);
+	public void deletar(ProdutoF produto);
 	public void deletePorId(String idProduto);
 	
-	public Produto buscarPorId(String id);
-	public List<Produto> buscarTodos();
+	public ProdutoF buscarPorId(String id);
+	public List<ProdutoF> buscarTodos();
 
-	public void deleteAlertasProduto(Produto produto);
+	public void deleteAlertasProduto(ProdutoF produto);
 
-	public void deletarTodos(Produto produto);
+	public void deletarTodos(ProdutoF produto);
 	
 	public List<String> buscarModelosPorMarca(String marca);
 	
-	public MarcaModelo buscarPorMarcaModelo(String marca, String modelo);
+	public MarcaModeloF buscarPorMarcaModelo(String marca, String modelo);
 	
 	public List<String> buscarModelos();
 	

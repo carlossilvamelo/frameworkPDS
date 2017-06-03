@@ -5,33 +5,33 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.frameworkPDS.models.Peca;
+import com.frameworkPDS.models.PecaF;
 import com.frameworkPDS.repository.PecaRepository;
 
 
 @Service
-public class PecaService implements IPecaService{
+public class PecaServiceF implements IPecaService{
 
 	@Autowired
 	private PecaRepository pecaRepository;
 	
 	@Override
-	public void inserir(Peca peca) {
+	public void inserir(PecaF peca) {
 		pecaRepository.save(peca);
 	}
 
 	@Override
-	public void deletar(Peca peca) {
+	public void deletar(PecaF peca) {
 		pecaRepository.delete(peca);
 	}
 
 	@Override
-	public List<Peca> buscarTodos() {
+	public List<PecaF> buscarTodos() {
 		return pecaRepository.findAll();
 	}
 
 	@Override
-	public Peca buscarPorId(Long id) {
+	public PecaF buscarPorId(Long id) {
 		return pecaRepository.getOne(id);
 	}
 

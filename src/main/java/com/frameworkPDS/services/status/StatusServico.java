@@ -1,10 +1,10 @@
 package com.frameworkPDS.services.status;
 
-
+import java.util.List;
 
 public abstract class StatusServico{
 	
-	
+	List<StatusServico> proximosPossiveis;
 	private String nome;
 	
 	public StatusServico(String nome){
@@ -20,6 +20,17 @@ public abstract class StatusServico{
 	}
 	
 	
+
+	public List<StatusServico> getProximosPossiveis() {
+		return proximosPossiveis;
+	}
+
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 
 	public static StatusServico consultarStatusAtual(String nome, StatusServico statusInicial){
 		

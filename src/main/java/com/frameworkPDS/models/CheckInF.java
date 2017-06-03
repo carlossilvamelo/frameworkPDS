@@ -1,5 +1,6 @@
 package com.frameworkPDS.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -16,8 +17,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
-public class CheckIn {
+public class CheckInF implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_checkin")
@@ -29,16 +34,15 @@ public class CheckIn {
 	private String descricao;
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
 	@JoinColumn(name="id_acompanhamento")
-	private Acompanhamento acompanhamento;
+	private AcompanhamentoF acompanhamento;
 	
+	public CheckInF() {
+	}
 	
-	public CheckIn(Integer id, Date dataHora, String acao) {
+	public CheckInF(Integer id, Date dataHora, String acao) {
 		this.id = id;
 		this.dataHora = dataHora;
 		this.acao = acao;
-	}
-	
-	public CheckIn() {
 	}
 	
 	public Integer getId() {

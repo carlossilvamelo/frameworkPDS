@@ -1,5 +1,7 @@
 package com.frameworkPDS.models;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity
-public class Peca {
 
+@Entity
+public class PecaF implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="id_peca")
 	private Long id;
@@ -21,7 +28,7 @@ public class Peca {
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
 	@JoinColumn(name="id_orcamento")
-	private Orcamento orcamento;
+	private OrcamentoF orcamento;
 	
 	
 	public String getNome() {
@@ -49,6 +56,16 @@ public class Peca {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public OrcamentoF getOrcamento() {
+		return orcamento;
+	}
+	public void setOrcamento(OrcamentoF orcamento) {
+		this.orcamento = orcamento;
+	}
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+	
 	
 	
 }

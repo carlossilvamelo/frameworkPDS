@@ -2,15 +2,14 @@ package com.frameworkPDS.models;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
-public class Endereco implements Serializable{
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+public class EnderecoF implements Serializable{
 	
 	
 	/**
@@ -25,7 +24,7 @@ public class Endereco implements Serializable{
 	private int numero;
 	
 	
-	public Endereco() {
+	public EnderecoF() {
 		// TODO Auto-generated constructor stub
 	}
 	
