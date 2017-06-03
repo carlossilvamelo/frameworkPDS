@@ -1,6 +1,6 @@
-package com.frameworkPDS.models.status;
+package com.frameworkPDS.services.status;
 
-public class Finalizado extends State{
+public class Finalizado extends StatusServico{
 
 	public Finalizado() {
 		super("Finalizado");
@@ -13,7 +13,7 @@ public class Finalizado extends State{
 
 
 	@Override
-	public State proximo() {
+	public StatusServico proximo() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.frameworkPDS.models.status.State;
 
 @Entity
 public class Acompanhamento {
@@ -24,8 +23,9 @@ public class Acompanhamento {
 	private Integer id;
 	private String statusServico;
 	
-	@OneToMany(mappedBy="servico",fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
+	@OneToMany(mappedBy="acompanhamento",fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	private List<CheckIn> checkIns;
+	
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
 	@JoinColumn(name="id_servico")
 	private Servico servico;

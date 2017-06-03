@@ -30,7 +30,8 @@ public class Prestadora implements Serializable{
 	private String email;
 	@OneToOne
 	private Endereco endereco;
-	@OneToMany( fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	
+	@OneToMany(mappedBy="prestadora", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<Servico> servicos;
 	
 	public Prestadora(){}

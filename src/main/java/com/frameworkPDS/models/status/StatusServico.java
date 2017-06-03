@@ -10,20 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.frameworkPDS.models.Servico;
+import org.springframework.stereotype.Service;
 
 
-public abstract class State{
+@Service
+public abstract class StatusServico{
 	
 	
 	private String nome;
 	
-	public State(String nome){
+	public StatusServico(String nome){
 		this.nome = nome;
 	}
 	
 	
-	public abstract State proximo();
+	public abstract StatusServico proximo();
 	
 	
 	public String getNome(){
@@ -32,24 +33,20 @@ public abstract class State{
 	
 	
 
-	public static State getStatusAtual(String nome){
-		State statusAtual=new Iniciado();
+	public static StatusServico consultarStatusAtual(String nome, StatusServico statusInicial){
 		
 		
-		while(statusAtual != null){
-			if(statusAtual.getNome().equals(nome))
-				return statusAtual;
+		while(statusInicial != null){
+			if(statusInicial.getNome().equals(nome))
+				return statusInicial;
 			
-			statusAtual = statusAtual.proximo();
+			statusInicial = statusInicial.proximo();
 			
 		}
 		return null;
 	}
 	
-	
-	
-	
-	
+
 	
 	
 }

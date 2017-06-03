@@ -1,7 +1,7 @@
-package com.frameworkPDS.models.status;
+package com.frameworkPDS.services.status;
 
 
-public class  Iniciado extends State{
+public class  Iniciado extends StatusServico{
 
 	//private static StatusServico instance = new Iniciado();
 	
@@ -16,7 +16,7 @@ public class  Iniciado extends State{
 
 
 	@Override
-	public State proximo() {
+	public StatusServico proximo() {
 		
 		return new EmAndamento();
 	}
