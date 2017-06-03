@@ -25,6 +25,8 @@ public class Produto implements Serializable{
 	@Column(name="id_produto")
 	private String id;
 	
+	private String nome;
+	
 
 	
 

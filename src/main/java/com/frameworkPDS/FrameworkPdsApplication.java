@@ -5,10 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.controller.testes.TesteController;
+import com.frameworkPDS.services.ServicoService;
 
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses={TesteController.class})
+@ComponentScan(basePackageClasses={TesteController.class, ServicoService.class})
 public class FrameworkPdsApplication {
 
 	
