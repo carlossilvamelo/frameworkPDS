@@ -12,7 +12,7 @@ import com.frameworkPDS.models.Peca;
 public abstract class Busca {
 
 	private List<Peca> pecas;
-	
+
 	public Busca(){
 		
 		pecas = new ArrayList<Peca>();
@@ -59,4 +59,5 @@ public abstract class Busca {
 	}
 
 	
+
 }
