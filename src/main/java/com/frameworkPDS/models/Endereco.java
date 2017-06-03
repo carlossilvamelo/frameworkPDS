@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -21,8 +23,7 @@ public class Endereco implements Serializable{
 	private String cidade;
 	private String bairro;
 	private int numero;
-	@OneToOne(cascade= CascadeType.PERSIST)
-	private Contratante contratante;
+	
 	
 	public Endereco() {
 		// TODO Auto-generated constructor stub

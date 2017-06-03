@@ -23,12 +23,58 @@ public class Orcamento {
 	@Column(name="id_orcamento")
 	private Long id;
 	private Double precoMaoObra;
-	@OneToMany(mappedBy="orcamento", fetch=FetchType.LAZY, cascade= CascadeType.ALL)
-	private List<Peca> pecasTroca;// nome da peça valor
 	private String obs;
-	@ManyToOne
+	private Double valorAdicional;
+	private Double descontoValor;
+	private Integer descontoPorcentagem;
+	public Double getDescontoValor() {
+		return descontoValor;
+	}
+
+	public void setDescontoValor(Double descontoValor) {
+		this.descontoValor = descontoValor;
+	}
+
+	public Integer getDescontoPorcentagem() {
+		return descontoPorcentagem;
+	}
+
+	public void setDescontoPorcentagem(Integer descontoPorcentagem) {
+		this.descontoPorcentagem = descontoPorcentagem;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Double getValorAdicional() {
+		return valorAdicional;
+	}
+
+	public void setValorAdicional(Double valorAdicional) {
+		this.valorAdicional = valorAdicional;
+	}
+
+
+	public Servico getServico() {
+		return servico;
+	}
+
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
+
+	@OneToMany(mappedBy="orcamento",fetch=FetchType.LAZY, cascade= CascadeType.ALL)
+	private List<Peca> pecasTroca;
+	
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
 	@JoinColumn(name="id_servico")
 	private Servico servico;
+	
 	
 	public Orcamento() {
 		// TODO Auto-generated constructor stub

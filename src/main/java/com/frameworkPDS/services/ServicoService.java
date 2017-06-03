@@ -3,6 +3,7 @@ package com.frameworkPDS.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.frameworkPDS.models.CheckIn;
@@ -51,14 +52,7 @@ public class ServicoService implements IServicoService{
 		servicoRepository.delete(servico);
 	}
 	
-	@Override
-	public void deletarTodos(Produto produto) {
-		
-		for(Servico serv: produto.getServicos()){
-			servicoRepository.delete(serv);
-		}
-		
-	}
+	
 
 	@Override
 	public Servico buscarPorId(Integer id) {
@@ -73,7 +67,6 @@ public class ServicoService implements IServicoService{
 
 	@Override
 	public List<Servico> buscarServicosPorIdContratante(String idCliente) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
@@ -91,7 +84,7 @@ public class ServicoService implements IServicoService{
 	@Override
 	public void verificarServico(Integer id){
 		
-		Servico servi = servicoRepository.findOne(id);
+		/*Servico servi = servicoRepository.findOne(id);
 		
 		for (CheckIn checkin : servi.getCheckIns()) {
 			
@@ -99,7 +92,13 @@ public class ServicoService implements IServicoService{
 				servicoRepository.delete(servi);
 			}
 			
-		}
+		}*/
+	}
+
+	@Override
+	public void deletarTodos(Produto produto) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

@@ -6,6 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,6 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class CheckIn {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_checkin")
 	private Integer id;
 	@DateTimeFormat(pattern="dd/mm/yyyy")
@@ -24,10 +27,10 @@ public class CheckIn {
 	private String acao;
 	private Integer classificacao;
 	private String descricao;
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
+	@JoinColumn(name="id_acompanhamento")
+	private Acompanhamento acompanhamento;
 	
-	@ManyToOne(fetch= FetchType.EAGER, cascade= CascadeType.REMOVE)
-	@JoinColumn(name="id_servico")
-	private Servico servico;
 	
 	public CheckIn(Integer id, Date dataHora, String acao) {
 		this.id = id;
@@ -70,13 +73,7 @@ public class CheckIn {
 		this.classificacao = classficacao;
 	}
 
-	public Servico getVeiculo() {
-		return servico;
-	}
-
-	public void setVeiculo(Servico servico) {
-		this.servico = servico;
-	}
+	
 
 	public String getDescricao() {
 		return descricao;
@@ -86,12 +83,6 @@ public class CheckIn {
 		this.descricao = descricao;
 	}
 
-	public Servico getServico() {
-		return servico;
-	}
-
-	public void setServico(Servico servico) {
-		this.servico = servico;
-	}
+	
 	
 }

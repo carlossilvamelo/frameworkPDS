@@ -25,30 +25,37 @@ public class Produto implements Serializable{
 	@Id
 	@Column(name="id_produto")
 	private String id;
-	@ManyToOne(fetch=FetchType.EAGER, cascade= CascadeType.MERGE)
-	@JoinColumn(name="id_contratante")
-	private Contratante cliente;
+	private String nome;
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name="id_marcaModelo")
+	private MarcaModelo marcaModelo;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public MarcaModelo getMarcaModelo() {
+		return marcaModelo;
+	}
+	public void setMarcaModelo(MarcaModelo marcaModelo) {
+		this.marcaModelo = marcaModelo;
+	}
 
-	@OneToMany(mappedBy="produto", fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.REFRESH})
-	private List<Servico> servicos;
+	
 	
 
-	public Contratante getCliente() {
-		return cliente;
-	}
-	public void setCliente(Contratante cliente) {
-		this.cliente = cliente;
-	}
-	public List<Servico> getServicos() {
-		return servicos;
-	}
-	public void setServicos() {
-		this.servicos = new ArrayList<Servico>();
-	}
-	public void addServico(Servico servico){
-		setServicos();
-		this.servicos.add(servico);
-	}
+
+	
+
+	
+
 	
 	
 }
