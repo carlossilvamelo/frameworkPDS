@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.frameworkPDS.models.MarcaModelo;
 import com.frameworkPDS.models.Produto;
 import com.frameworkPDS.models.Servico;
+import com.frameworkPDS.repository.MarcaModeloRepository;
 import com.frameworkPDS.repository.ProdutoRepository;
 
 
@@ -16,6 +18,9 @@ public class ProdutoService implements IProdutoService{
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private MarcaModeloRepository modeloRepository;
 	
 
 	@Override
@@ -56,6 +61,24 @@ public class ProdutoService implements IProdutoService{
 		//TODO criar esse método
 		
 		//dataFacade.getAlertaRepository().deleteByTipoAlerta(veiculo);
+	}
+
+	@Override
+	public List<String> buscarModelosPorMarca(String marca) {
+		// TODO Auto-generated method stub
+		return modeloRepository.buscarModelosPorMarca(marca);
+	}
+
+	@Override
+	public MarcaModelo buscarPorMarcaModelo(String marca, String modelo) {
+		// TODO Auto-generated method stub
+		return modeloRepository.buscarPorMarcaModelo(marca, modelo);
+	}
+
+	@Override
+	public List<String> buscarModelos() {
+		// TODO Auto-generated method stub
+		return modeloRepository.buscarModelos();
 	}
 
 	

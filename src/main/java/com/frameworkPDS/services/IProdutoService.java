@@ -2,6 +2,7 @@ package com.frameworkPDS.services;
 
 import java.util.List;
 
+import com.frameworkPDS.models.MarcaModelo;
 import com.frameworkPDS.models.Produto;
 
 public interface IProdutoService {
@@ -17,8 +18,13 @@ public interface IProdutoService {
 
 	public void deleteAlertasProduto(Produto produto);
 
-	void deletarTodos(Produto produto);
+	public void deletarTodos(Produto produto);
 	
+	public List<String> buscarModelosPorMarca(String marca);
+	
+	public MarcaModelo buscarPorMarcaModelo(String marca, String modelo);
+	
+	public List<String> buscarModelos();
 	
 
 	

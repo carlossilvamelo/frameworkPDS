@@ -33,6 +33,8 @@ public class Contratante implements Serializable{
 	private String email;
 	private String sexo;
 
+	@OneToMany(mappedBy="contratante", fetch=FetchType.LAZY, cascade={CascadeType.ALL})
+	private List<Produto> produto;
 	
 	@OneToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	private Endereco endereco;
@@ -129,6 +131,16 @@ public class Contratante implements Serializable{
 		this.id = id;
 	}
 
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+	public void setProduto() {
+		this.produto = new ArrayList<Produto>();
+	}
+	public void addProduto(Produto produto){
+		this.produto.add(produto);
+	}
 	
 
 

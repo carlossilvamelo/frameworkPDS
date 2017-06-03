@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import javassist.CtPrimitiveType;
+
 
 
 @Entity
@@ -29,6 +31,10 @@ public class Produto implements Serializable{
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_marcaModelo")
 	private MarcaModelo marcaModelo;
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.MERGE)
+	@JoinColumn(name="id_contratante")
+	private Contratante contratante;
+	
 	public String getId() {
 		return id;
 	}
@@ -46,6 +52,12 @@ public class Produto implements Serializable{
 	}
 	public void setMarcaModelo(MarcaModelo marcaModelo) {
 		this.marcaModelo = marcaModelo;
+	}
+	public Contratante getContratante() {
+		return contratante;
+	}
+	public void setContratante(Contratante contratante) {
+		this.contratante = contratante;
 	}
 
 	
