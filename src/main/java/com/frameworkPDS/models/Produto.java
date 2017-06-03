@@ -31,6 +31,11 @@ public class Produto implements Serializable{
 	private MarcaModelo marcaModelo;
 
 	
+	private String nome;
+	
+
+
+	
 
 	
 
