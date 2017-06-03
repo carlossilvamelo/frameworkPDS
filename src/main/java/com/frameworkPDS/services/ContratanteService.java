@@ -3,7 +3,6 @@ package com.frameworkPDS.services;
 
 import java.util.List;
 
-import javax.persistence.EnumType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -13,7 +12,7 @@ import com.frameworkPDS.models.Contratante;
 import com.frameworkPDS.repository.ContratanteRepository;
 
 @Service
-public abstract class ContratanteService implements IContratanteService{
+public class ContratanteService implements IContratanteService{
 
 
 	
@@ -24,7 +23,8 @@ public abstract class ContratanteService implements IContratanteService{
 	//private LogicaAcompanhamento logicaAcompanhamento;
 	
 	@Override
-	public abstract void verificaProduto(String idContratante);
+	public void verificaProduto(String idContratante) {
+	}
 	
 	@Override
 	public Contratante buscarPorId(String id) {
@@ -68,6 +68,12 @@ public abstract class ContratanteService implements IContratanteService{
 			e.printStackTrace();
 		}
 		return contratantes;
+	}
+
+	@Override
+	public Contratante buscarID(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

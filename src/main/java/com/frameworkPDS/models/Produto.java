@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 
@@ -24,7 +25,10 @@ public class Produto implements Serializable{
 	@Id
 	@Column(name="id_produto")
 	private String id;
-	
+	private String nome;
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name="id_marcaModelo")
+	private MarcaModelo marcaModelo;
 
 	
 

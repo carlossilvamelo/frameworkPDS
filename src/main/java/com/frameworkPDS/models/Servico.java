@@ -20,7 +20,7 @@ import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.frameworkPDS.models.status.State;
+import com.frameworkPDS.services.status.StatusServico;
 
 
 @Entity
@@ -40,11 +40,11 @@ public class Servico implements Serializable{
 
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Date dataRequerimento;
-	private Orcamento o;
+	
 	@DateTimeFormat(pattern="dd/mm/yyyy")
 	private Calendar prazoFinal;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	@JoinColumn(name="id_prestadora")
 	private Prestadora prestadora;
 	
@@ -58,8 +58,8 @@ public class Servico implements Serializable{
 	
 	private String notaFiscal;
 	
-	//@OneToMany(mappedBy="servico",fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
-	//private List<Orcamento> orcamentos;
+	@OneToMany(mappedBy="servico",fetch=FetchType.LAZY, cascade={CascadeType.REMOVE, CascadeType.PERSIST})
+	private List<Orcamento> orcamentos;
 
 	private String descricao;
 	private String obs;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.14" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="com.frameworkPDS.models.status.State" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/status/State.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="com.frameworkPDS.services.status.State" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/services/status/State.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="418" y="34"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.frameworkPDS.models.status.Iniciado" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/status/Iniciado.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="com.frameworkPDS.services.status.Iniciado" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/services/status/Iniciado.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="220" y="200"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +20,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.frameworkPDS.models.status.EmAndamento" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/status/EmAndamento.java" binary="false" 
+  <class id="3" language="java" name="com.frameworkPDS.services.status.EmAndamento" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/services/status/EmAndamento.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="416" y="200"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -29,8 +30,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.frameworkPDS.models.status.Finalizado" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/status/Finalizado.java" binary="false" 
+  <class id="4" language="java" name="com.frameworkPDS.services.status.Finalizado" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/services/status/Finalizado.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="612" y="200"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

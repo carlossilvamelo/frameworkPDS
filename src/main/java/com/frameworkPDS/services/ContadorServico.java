@@ -1,7 +1,10 @@
 package com.frameworkPDS.services;
 
+import org.springframework.stereotype.Service;
+
 import com.frameworkPDS.models.Orcamento;
 
+@Service
 public abstract class ContadorServico {
 	
 	private Double valorAdicional = 0.0;

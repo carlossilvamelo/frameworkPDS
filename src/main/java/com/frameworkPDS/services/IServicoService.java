@@ -19,17 +19,11 @@ public interface IServicoService {
 	public void deletar(Servico servico);
 	public Servico buscarPorId(Integer id);
 	public List<Servico> buscarTodos();
-
 	public List<Servico> buscarServicosPorContratante(Contratante contratante);
-	
 	public List<Servico> buscarServicosPorPrestadora(Prestadora prestadora);
-
 	public void atualizarProduto(Produto produto);
-
 	public void deletarTodos(Produto produto);
-
 	public List<CheckIn> listarCheckIn(Integer id);
-
 	public void verificarServico(Integer id);
 	
 	

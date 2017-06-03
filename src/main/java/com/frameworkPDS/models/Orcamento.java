@@ -23,9 +23,14 @@ public class Orcamento {
 	@Column(name="id_orcamento")
 	private Long id;
 	private Double precoMaoObra;
-	//@OneToMany(mappedBy="orcamento",fetch=FetchType.LAZY, cascade= CascadeType.ALL)
-	private List<Peca> pecasTroca;// nome da peça valor
 	private String obs;
+	
+	@OneToMany(mappedBy="orcamento",fetch=FetchType.LAZY, cascade= CascadeType.ALL)
+	private List<Peca> pecasTroca;
+	
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
+	@JoinColumn(name="id_servico")
+	private Servico servico;
 	
 	
 	public Orcamento() {
@@ -40,7 +45,7 @@ public class Orcamento {
 		this.precoMaoObra = precoMaoObra;
 	}
 
-	/*public List<Peca> getPecasTroca() {
+	public List<Peca> getPecasTroca() {
 		return pecasTroca;
 	}
 
@@ -52,7 +57,7 @@ public class Orcamento {
 		
 		setPecasTroca(new ArrayList<Peca>());
 		pecasTroca.add(peca);
-	}*/
+	}
 
 	public String getObs() {
 		return obs;

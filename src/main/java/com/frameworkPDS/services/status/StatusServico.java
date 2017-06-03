@@ -1,4 +1,4 @@
-package com.frameworkPDS.models.status;
+package com.frameworkPDS.services.status;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,20 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.stereotype.Service;
+
 import com.frameworkPDS.models.Servico;
 
-
-public abstract class State{
+@Service
+public abstract class StatusServico{
 	
 	
 	private String nome;
 	
-	public State(String nome){
+	public StatusServico(String nome){
 		this.nome = nome;
 	}
 	
 	
-	public abstract State proximo();
+	public abstract StatusServico proximo();
 	
 	
 	public String getNome(){
@@ -32,8 +34,8 @@ public abstract class State{
 	
 	
 
-	public static State getStatusAtual(String nome){
-		State statusAtual=new Iniciado();
+	public static StatusServico consultarStatusAtual(String nome){
+		StatusServico statusAtual=new Iniciado();
 		
 		
 		while(statusAtual != null){

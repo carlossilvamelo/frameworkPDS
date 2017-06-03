@@ -27,6 +27,9 @@ public class CheckIn {
 	private String acao;
 	private Integer classificacao;
 	private String descricao;
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
+	@JoinColumn(name="id_acompanhamento")
+	private Acompanhamento acompanhamento;
 	
 	
 	public CheckIn(Integer id, Date dataHora, String acao) {

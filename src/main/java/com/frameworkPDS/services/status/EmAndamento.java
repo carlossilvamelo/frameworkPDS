@@ -1,6 +1,6 @@
-package com.frameworkPDS.models.status;
+package com.frameworkPDS.services.status;
 
-public class EmAndamento extends State{
+public class EmAndamento extends StatusServico{
 
 	
 	public EmAndamento() {
@@ -9,7 +9,7 @@ public class EmAndamento extends State{
 
 
 	@Override
-	public State proximo() {
+	public StatusServico proximo() {
 		// TODO Auto-generated method stub
 		return new Finalizado();
 	}
