@@ -19,10 +19,7 @@ import com.frameworkPDS.services.ContratanteService;
 import com.frameworkPDS.services.IServicoService;
 import com.frameworkPDS.services.ProdutoService;
 import com.frameworkPDS.services.ServicoService;
-import com.frameworkPDS.services.status.EmAndamento;
-import com.frameworkPDS.services.status.Finalizado;
-import com.frameworkPDS.services.status.Iniciado;
-import com.frameworkPDS.services.status.StatusServico;
+
 
 
 

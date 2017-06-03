@@ -20,7 +20,6 @@ import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.frameworkPDS.services.status.StatusServico;
 
 
 @Entity

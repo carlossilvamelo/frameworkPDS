@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.frameworkPDS.services.status.StatusServico;
 
 @Entity
 public class Acompanhamento {
