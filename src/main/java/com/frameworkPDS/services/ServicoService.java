@@ -2,6 +2,7 @@ package com.frameworkPDS.services;
 
 import java.util.List;
 
+import org.jsoup.HttpStatusException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,9 @@ import com.frameworkPDS.models.Produto;
 import com.frameworkPDS.models.Servico;
 import com.frameworkPDS.repository.CheckInRepository;
 import com.frameworkPDS.repository.ServicoRepository;
+import com.frameworkPDS.services.busca.Busca;
+import com.frameworkPDS.services.busca.BuscaPecaSite;
+
 
 
 
@@ -100,7 +104,33 @@ public class ServicoService implements IServicoService{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public void buscarPeca(){
+	
+		//https://www.kabum.com.br/cgi-local/site/listagem/listagem.cgi?ordem=5&limite=100&dep=&sec=&cat=&sub=&pagina=1&string=
+				String url = construirUrl("https://www.kabum.com.br/hardware/", "memoria-ram","?ordem=5&limite=100&pagina=1&string=");
+				
+				System.out.println("URL: "+ url);
+				
+				Busca busca = new BuscaPecaSite(url);
+				
+				try {
+					busca.buscarPeca("listagem-box", "listagem-box");
+				} catch (HttpStatusException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
+	}
+	
+	public static String construirUrl(String url, String busca, String pagination){
+		
+		busca = busca.replace(" ", "+");
+		
+		
+		return url + busca + pagination;
+		
+	}
 
 
 }

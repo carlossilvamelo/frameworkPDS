@@ -48,11 +48,11 @@ public class MarcaModelo {
 		this.modelo = modelo;
 	}
 	
-	public Produto getVeiculo() {
+	public Produto getProduto() {
 		return produto;
 	}
 
-	public void setVeiculo(Produto produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 	
