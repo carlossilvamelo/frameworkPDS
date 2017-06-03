@@ -1,40 +1,47 @@
 package com.frameworkPDS.services;
 
+
+import java.awt.List;
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Service;
 
 import com.frameworkPDS.models.Orcamento;
+import com.frameworkPDS.models.Peca;
 
 @Service
 public abstract class ContadorServico {
 	
-	private Double valorAdicional = 0.0;
-	private Double desconto = 0.0;
+
 	
 	
 	public final Double contabilizarServiço(Orcamento orcamento) {
 		Double valor= 0.0;
 		valor += orcamento.getPrecoMaoObra();
-		//pegar valores das peças
-		valor -= addDesconto();
-		valor += valorAdicional();
-		valor = addDescontoPorcentagem(valor);
+		
+		ArrayList<Peca> pecas = (ArrayList<Peca>) orcamento.getPecasTroca();
+		for (Peca peca : pecas) {
+			valor += peca.getPreco();
+		}
+		valor -= addDescontoValor(orcamento);
+		valor += valorAdicional(orcamento);
+		valor = addDescontoPorcentagem(valor, orcamento);
 		return valor;
 	}
 
 	
-	public Double addDesconto() {
-		// TODO Auto-generated method stub
-		return 0.0;
+	public Double addDescontoValor(Orcamento orcamento) {
+		
+		return orcamento.getDescontoValor();
 	}
 	
-	public Double addDescontoPorcentagem(Double valor) {
-		Integer pocentagem = 0;
-		return valor * (1-(pocentagem/100));
+	public Double addDescontoPorcentagem(Double valor, Orcamento orcamento) {
+		return valor * (1-(orcamento.getDescontoPorcentagem()/100));
 	}
 
-	public Double valorAdicional() {
+	public Double valorAdicional(Orcamento orcamento) {
 		// TODO Auto-generated method stub
-		return 0.0;
+		return orcamento.getValorAdicional();
 	}
 	
 	public abstract Double contabilizarValorProprio(Orcamento orcamento);

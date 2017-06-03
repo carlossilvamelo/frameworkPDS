@@ -24,7 +24,50 @@ public class Orcamento {
 	private Long id;
 	private Double precoMaoObra;
 	private String obs;
-	
+	private Double valorAdicional;
+	private Double descontoValor;
+	private Integer descontoPorcentagem;
+	public Double getDescontoValor() {
+		return descontoValor;
+	}
+
+	public void setDescontoValor(Double descontoValor) {
+		this.descontoValor = descontoValor;
+	}
+
+	public Integer getDescontoPorcentagem() {
+		return descontoPorcentagem;
+	}
+
+	public void setDescontoPorcentagem(Integer descontoPorcentagem) {
+		this.descontoPorcentagem = descontoPorcentagem;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Double getValorAdicional() {
+		return valorAdicional;
+	}
+
+	public void setValorAdicional(Double valorAdicional) {
+		this.valorAdicional = valorAdicional;
+	}
+
+
+	public Servico getServico() {
+		return servico;
+	}
+
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
+
 	@OneToMany(mappedBy="orcamento",fetch=FetchType.LAZY, cascade= CascadeType.ALL)
 	private List<Peca> pecasTroca;
 	

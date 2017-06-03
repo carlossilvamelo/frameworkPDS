@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.frameworkPDS.models.CheckIn" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/CheckIn.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="306" y="565"/>    
+    <position height="-1" width="-1" x="358" y="829"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.frameworkPDS.models.Produto" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Produto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="845" y="467"/>    
+    <position height="-1" width="-1" x="149" y="409"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,52 +21,52 @@
   </class>  
   <class id="3" language="java" name="com.frameworkPDS.models.Acompanhamento" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Acompanhamento.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="289" y="398"/>    
+    <position height="-1" width="-1" x="325" y="598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.frameworkPDS.models.Alerta" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Alerta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="845" y="615"/>    
+  <class id="4" language="java" name="com.frameworkPDS.models.Peca" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Peca.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="122" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.frameworkPDS.models.Prestadora" project="frameworkPDS" 
+  <class id="5" language="java" name="com.frameworkPDS.models.MarcaModelo" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/MarcaModelo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="129" y="573"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.frameworkPDS.models.Prestadora" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Prestadora.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="338" y="235"/>    
+    <position height="-1" width="-1" x="596" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.frameworkPDS.models.Servico" project="frameworkPDS" 
+  <class id="7" language="java" name="com.frameworkPDS.models.Servico" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Servico.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="628" y="427"/>    
+    <position height="-1" width="-1" x="491" y="400"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="com.frameworkPDS.models.Endereco" project="frameworkPDS" 
+  <class id="8" language="java" name="com.frameworkPDS.models.Endereco" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Endereco.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="481" y="40"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="false" protected="false" private="false" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="com.frameworkPDS.models.Contratante" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Contratante.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="663" y="193"/>    
+    <position height="-1" width="-1" x="821" y="402"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,16 +75,16 @@
   </class>  
   <class id="9" language="java" name="com.frameworkPDS.models.Orcamento" project="frameworkPDS" 
     file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Orcamento.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="853" y="339"/>    
+    <position height="-1" width="-1" x="310" y="157"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.frameworkPDS.models.Peca" project="frameworkPDS" 
-    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Peca.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="130" width="127" x="799" y="127"/>    
+  <class id="10" language="java" name="com.frameworkPDS.models.Contratante" project="frameworkPDS" 
+    file="/frameworkPDS/src/main/java/com/frameworkPDS/models/Contratante.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="642" y="150"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -92,23 +92,23 @@
     </display>  
   </class>  
   <association id="11">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="12" name="contratante"/>      
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="12" name="marcaModelo"/>      
       <multiplicity id="13" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="14">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="15" name="servico"/>      
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="15" name="contratante"/>      
       <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="17">    
-    <end type="SOURCE" refId="6" navigable="false">      
+    <end type="SOURCE" refId="1" navigable="false">      
       <attribute id="18" name="acompanhamento"/>      
       <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
@@ -116,59 +116,59 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="20">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="21" name="prestadora"/>      
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="21" name="produto"/>      
       <multiplicity id="22" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="23">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="24" name="o"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="24" name="orcamentos"/>      
+      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="26">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="27" name="endereco"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="29">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="30" name="checkIns"/>      
-      <multiplicity id="31" minimum="0" maximum="2147483647"/>    
+      <attribute id="27" name="checkIns"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="33" name="servicos"/>      
-      <multiplicity id="34" minimum="0" maximum="2147483647"/>    
+  <association id="29">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="30" name="orcamento"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="35">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="36" name="endereco"/>      
-      <multiplicity id="37" minimum="0" maximum="1"/>    
+  <association id="32">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="33" name="servico"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="35">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="36" name="acompanhamento"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="38">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="39" name="veiculo"/>      
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="39" name="servico"/>      
       <multiplicity id="40" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="41">    
@@ -176,23 +176,47 @@
       <attribute id="42" name="pecasTroca"/>      
       <multiplicity id="43" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="44">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="45" name="produto"/>      
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="45" name="endereco"/>      
       <multiplicity id="46" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="47">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="48" name="servicos"/>      
-      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="48" name="endereco"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="51" name="servicos"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="54" name="prestadora"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="57" name="servicos"/>      
+      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

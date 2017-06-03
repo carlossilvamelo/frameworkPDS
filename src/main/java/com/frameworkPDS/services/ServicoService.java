@@ -67,7 +67,6 @@ public class ServicoService implements IServicoService{
 
 	@Override
 	public List<Servico> buscarServicosPorIdContratante(String idCliente) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
