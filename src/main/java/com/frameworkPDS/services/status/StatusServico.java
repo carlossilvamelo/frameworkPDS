@@ -1,20 +1,7 @@
 package com.frameworkPDS.services.status;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
-import org.springframework.stereotype.Service;
 
-import com.frameworkPDS.models.Servico;
-
-@Service
 public abstract class StatusServico{
 	
 	
@@ -34,15 +21,14 @@ public abstract class StatusServico{
 	
 	
 
-	public static StatusServico consultarStatusAtual(String nome){
-		StatusServico statusAtual=new Iniciado();
+	public static StatusServico consultarStatusAtual(String nome, StatusServico statusInicial){
 		
 		
-		while(statusAtual != null){
-			if(statusAtual.getNome().equals(nome))
-				return statusAtual;
+		while(statusInicial != null){
+			if(statusInicial.getNome().equals(nome))
+				return statusInicial;
 			
-			statusAtual = statusAtual.proximo();
+			statusInicial = statusInicial.proximo();
 			
 		}
 		return null;
