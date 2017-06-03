@@ -15,7 +15,8 @@ public class Peca {
 	@Column(name="id_peca")
 	private Long id;
 	private String nome;
-	private Float preco;
+	private Double preco;
+	private Integer avaliacao;
 	private String descricao;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
@@ -29,11 +30,18 @@ public class Peca {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Float getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(Float preco) {
-		this.preco = preco;
+	public void setPreco(String valor) {
+		
+		this.preco = Double.parseDouble(valor);
+	}
+	public Integer getAvaliacao() {
+		return avaliacao;
+	}
+	public void setAvaliacao(Integer avaliacao) {
+		this.avaliacao = avaliacao;
 	}
 	public String getDescricao() {
 		return descricao;

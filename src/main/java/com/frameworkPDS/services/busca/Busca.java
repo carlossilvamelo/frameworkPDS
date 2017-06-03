@@ -12,5 +12,7 @@ public interface Busca {
 	
 	public List<Peca> buscarPeca(String idValor, String idProduto) throws HttpStatusException;
 	public List<Peca> menorPreco(List<Peca> pecas) throws HttpStatusException;
-	public List<Peca> maisAvaliado(List<Peca> pecas);
+	public List<Peca> maisAvaliado(String idValor, String idProduto);
+	
+
 }
