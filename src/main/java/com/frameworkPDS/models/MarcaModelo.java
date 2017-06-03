@@ -12,22 +12,23 @@ import javax.persistence.OneToOne;
 public class MarcaModelo {
 
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_marcaModelo")
+	private Long id;
+	private String marca;
+	private String modelo;
+	@OneToOne(mappedBy="marcaModelo", cascade=CascadeType.ALL)
+	private Produto produto;
+
 	public MarcaModelo(){
 	}
-
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer idMarca) {
 
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long idMarca) {
-
 		this.id = idMarca;
 	}
 
@@ -45,6 +46,14 @@ public class MarcaModelo {
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
+	}
+	
+	public Produto getVeiculo() {
+		return produto;
+	}
+
+	public void setVeiculo(Produto produto) {
+		this.produto = produto;
 	}
 	
 	
